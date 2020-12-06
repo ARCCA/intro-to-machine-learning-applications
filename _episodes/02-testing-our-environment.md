@@ -1,13 +1,20 @@
 ---
 title: "Testing our environment"
-teaching: 20
+teaching: 30
 exercises: 0
 questions:
-- "Run a simple Machine Learning problem to test our tools"
+- "Use Scikit Learn to build a simple linear regression machine learning problem."
 objectives:
-- "FIX"
+- "Familiarize with the basic steps involved in building a machine learning model."
+- "Test our machine learning tools and environment."
 keypoints:
-- "FIX"
+- "Python is a very useful programming language to develop machine learning 
+  applications"
+- "Scikit Learn together with Numpy, Pandas and Matplotlib form a popular machine 
+  learning environment."
+- "Linear regression is one of the most simple and useful machine learning algorithms
+  in which the model makes a prediction by simply computing a weighted sum of the 
+  input features, plus a constant called the intercept term."
 ---
 
 ## GDP and happiness
@@ -20,17 +27,17 @@ but other libraries should provide similar functionalities.
 > ## Obtaining and working with data
 > When developing Machine Learning applications you will likely need to work with
 > databases either by creating them yourself or obtaining some already available. 
-> Depending on the field and stage of your research, the dabases can range from a
+> Depending on the field and stage of your research, the databases can range from a
 > few megabytes to several hundreds gigabytes and ever bigger. At that point you'll
 > likely need to consider carefully (even more if the database has data protection
 > requirements) how best to manage storage requirements in order to optimize 
 > available resources in your work system. Do not hesitate to contact your system
 > administrators to discuss further any doubts or concerns that you might have.
 >
-> Luckily for this training the datases we will be working with are publicly
+> Luckily for this training the databases we will be working with are publicly
 > available from the [OECD's Better Life Index](https://stats.oecd.org/index.aspx?DataSetCode=BLI))
 > and the [IMF's GDP per capita](https://www.imf.org/en/Publications/SPROLLs/world-economic-outlook-databases))
-> and only ocuppy a few megabytes. You can also find them in the zip file provided 
+> and only occupy a few megabytes. You can also find them in the zip file provided 
 > for this training course.
 > 
 {: .callout}
@@ -102,7 +109,7 @@ y = np.c_[country_stats_test["Life satisfaction"]]
 
 ## Building the model
 At this point it might be useful to visualize our data in order to gain some insight
-about the type of model that might be more useful to decribe it:
+about the type of model that might be more useful to describe it:
 ~~~
 country_stats.plot(kind='scatter', x="GDP per capita (2020)", y='Life satisfaction',xlim=[0,60000],ylim=[0,10])
 plt.show()
@@ -131,7 +138,7 @@ model.fit(X, y)
 ~~~
 {: .language-python}
 
-And we can access the estimated value for the model key parameters (which paramters 
+And we can access the estimated value for the model key parameters (which parameters 
 are available also depends on the selected model).
 ~~~
 print(f"model's intercept: {model.intercept_[0]}")
@@ -162,7 +169,8 @@ plt.show()
 <img src="{{ page.root }}/fig/life-satisfaction-vs-gdp-regression-line.png" alt="GDP vs Life Satisfaction - Regression Line" width="50%" height="50%" />
 
 ## Validating and making predictions
-After we have trained our model we should perform some validation checks using the labeled data we saved for this purpose:
+After we have trained our model we should perform some validation checks using the 
+labelled data we saved for this purpose:
 ~~~
 print("Country               GDP  BLI(pred) BLI")
 for country, row in country_stats_validate.iterrows():
@@ -209,9 +217,9 @@ plt.show()
 <img src="{{ page.root }}/fig/life-satisfaction-vs-gdp-regression-line-validate.png" alt="GDP vs Life Satisfaction - Regression Line" width="50%" height="50%" />
 
 Seems like our model is reasonably good at predicting values that fall within the
-range of our training data set but tends to overstimate the observed life
+range of our training data set but tends to overestimate the observed life
 satisfaction of richer countries. This give us an idea of the degree of confidence
 that we should have in our very simple model, perhaps we should try modifying the 
-model parameters or adding other variables like employment rate,health, air pollution
-and employ slighly more complex models.
+model parameters or adding other variables like employment rate, health, air 
+pollution and employ slighly more complex models.
 
