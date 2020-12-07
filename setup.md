@@ -23,7 +23,13 @@ For this workshop you will need to:
     
    Or if you prefer you can use [<ins>this yml file</ins>]({{ page.root }}/files/environment.yml) 
    to create a virtual environment with all the necessary libraries. You can use the
-   following command to install and activate your environment:
+   following command to install the environment:
+   ~~~
+   conda env create -f environment.yml
+   ~~~
+   {: .language-bash}
+
+   and then activate your environment:
    ~~~
    conda activate machine-learning
    ~~~
