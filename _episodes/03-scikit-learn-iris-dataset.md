@@ -232,6 +232,8 @@ control the shuffling applied to the data before applying the split with the opt
 *random_state*, this ensures reproducible results.
 
 ~~~
+from sklearn.model_selection import train_test_split
+
 X_train, X_test, y_train, y_test = train_test_split(
         iris_dataset['data'], iris_dataset['target'], test_size=0.25, random_state=0)
 print("X_train shape: {}".format(X_train.shape)) 
