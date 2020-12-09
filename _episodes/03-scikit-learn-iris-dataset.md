@@ -314,13 +314,19 @@ useful to visualize it. For this we can use matplotlib library and plot our trai
 data set on top of a coloured domain in which each color represents a category in 
 our model.
 ~~~
+import numpy as np
+from matplotlib.colors import ListedColormap
+import matplotlib.pyplot as plt
+
 x_min,x_max = X_train[:,2].min() - 1, X_train[:,2].max()+ 1
 y_min,y_max = X_train[:,3].min() - 1, X_train[:,3].max()+ 1
+h=0.02
 xx,yy = np.meshgrid(np.arange(x_min,x_max,h),np.arange(y_min,y_max,h))
 Z = knn.predict(np.c_[xx.ravel(), yy.ravel()])
 Z = Z.reshape(xx.shape)
 
 cmap_bold = ListedColormap(['darkorange', 'c', 'darkblue'])
+cmap_light=ListedColormap(['orange', 'cyan', 'cornflowerblue'])
 
 fig = plt.figure()
 ax1 = fig.add_subplot(111)
