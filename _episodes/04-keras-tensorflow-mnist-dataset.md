@@ -19,7 +19,7 @@ services.
 
 As other Machine Learning algorithms, ANNs have their own set of parameters that 
 need to be specified and tweak in order to create, train and use a model. We will try
-to exeplify these parameters and steps through solving a very simple deep learning 
+to exemplify these parameters and steps through solving a very simple deep learning 
 problem. For this we will use Keras API which is a beautifully designed and simple 
 high-level API for building, training, evaluating and running neural networks. 
 Despite its simplicity it is flexible enough to allow you to build a wide variety
@@ -31,7 +31,7 @@ of neural network architectures.
 We will use the [MNIST](https://en.wikipedia.org/wiki/MNIST_database) dataset, a 
 classic machine learning algorithm. The dataset consists of 60,000 training images 
 and 10,000 testing images. Each element in the dataset correspond to a grayscale 
-image of hand written digits (28x28 pixels). You can think of solving MNIST, this is,
+image of handwritten digits (28x28 pixels). You can think of solving MNIST, this is,
 classifying each number into one of 10 categories or *class*, as the "Hello World" of
 deep learning and can be used to verify that algorithms work correctly.
 
@@ -54,7 +54,7 @@ Downloading data from https://s3.amazonaws.com/img-datasets/mnist.npz
 
 > ## Downloading data in HPC systems
 > When working on HPC systems is not uncommon that compute or work nodes are close to
-> the outside world for security reasons. In those cases it is better to try to 
+> the outside world for security reasons. In those cases, it is better to try to 
 > download any required data locally in the login or head nodes and then instruct your
 > code how to access it.
 {: .callout}
@@ -111,7 +111,7 @@ data distillation process.
 In Keras, *Models* groups layers into an object with training and inference features.
 There are three ways to create Keras models: the sequential model, which is simply a
 list of layers and is limited to single input and single output layers; the 
-functional API, which supports arbitraty model architecture and is applicable to most
+functional API, which supports arbitrary model architecture and is applicable to most
 use cases; and a model subclassing that allows the user to everything from scratch 
 for maximum flexibility. For this course we will use a simple sequential model. We 
 start by importing the necessary libraries and instantiating a model. 
@@ -181,7 +181,7 @@ any other parameter that is learned during training. We can find out how many
 trainable parameters are in our network by counting the number of parameters within 
 each layer and then sum them up to get the total in the network. For this we need the
 number of inputs to the layer, its number of outputs (equal to the number of nodes in
-the layer) and wether or not the layer contains biases (also equal to the number of 
+the layer) and whether or not the layer contains biases (also equal to the number of 
 nodes in the layer). Then we simply multiply the number of inputs and outputs and add
 the number biases and then add the results for all layers. These parameters are where
 knowledge of the network persists. If you are curious, you can take a look with:
@@ -208,7 +208,7 @@ network.compile(optimizer='rmsprop',
 {: .language-python}
 
 The next step is to prepare our data to be fed to the model. As we are expecting the
-model to output the probability (between 0 and 1) that a digit belogs to 1 of 10
+model to output the probability (between 0 and 1) that a digit belongs to 1 of 10
 classes, we need to transform our data accordingly.
 ~~~
 train_images = train_images.reshape((60000,28 * 28))
@@ -266,7 +266,7 @@ to test alternative algorithms and parameters.
 
 ## Validation
 As we did with in our previous machine learning models, it is very useful to measure
-the degree of confidence we should have in our model by comparing the its predictions
+the degree of confidence we should have in our model by comparing its predictions
 on data for which we know the real values. For this we use our test dataset:
 ~~~
 test_loss, test_acc = network.evaluate(test_images,test_labels)
@@ -280,7 +280,7 @@ test_acc: 0.9800999760627747
 ~~~
 {: .output}
 
-Our model reached an accuracy of 0.98% for the validation data set which is slighly 
+Our model reached an accuracy of 0.98% for the validation data set which is slightly 
 lower than the accuracy obtained with the training data, which is an example of 
 overfitting.
 

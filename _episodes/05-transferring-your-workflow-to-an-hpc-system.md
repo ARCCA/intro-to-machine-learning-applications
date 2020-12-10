@@ -8,7 +8,7 @@ objectives:
 - "Understand main steps related with moving to an HPC system"
 keypoints:
 - "Moving to an HPC system can be challenging but there are sources of help that can make the transition easier."
-- "As you progress in the development of machine and deep learning applications new challenges are likely to appear. Requesting help in those case can save you a lot of tme."
+- "As you progress in the development of machine and deep learning applications new challenges are likely to appear. Requesting help in those case can save you a lot of time."
 ---
 
 It is very often the case when working on machine and deep learning problems to 
@@ -27,7 +27,7 @@ the pay versions of these services to continue making progress at a suitable rat
 (especially when trying to meet a deadline). This option might work for expert
 data and machine learning scientists and practitioners who can accurately budget
 number of core hours and amount of storage required, but might not work as well for
-somebody in the model developping stages and who has started to test more 
+somebody in the model developing stages and who has started to test more 
 challenging scenarios.
 
 What to do in this situation? There is no simple answer, and most of the time it
@@ -39,9 +39,9 @@ University's [Hawk Supercomputer](https://portal.supercomputing.wales/).
 The challenge with this solution is to adapt to a new working environment which 
 includes learning *Linux* commands (in a text-based console!), concepts such as job
 schedulers and scripting in new languages such as *Bash*. Fortunately, there is 
-also a dedicated team ([Advace Research at Cardiff](https://www.cardiff.ac.uk/advanced-research-computing)) that works continuously to try to make this transition as 
-smooth as possible by offering regular trainign sessions on these topics for new
-users, solving quearies when a cryptic software error occurs or any other technical
+also a dedicated team ([Advance Research at Cardiff](https://www.cardiff.ac.uk/advanced-research-computing)) that works continuously to try to make this transition as 
+smooth as possible by offering regular training sessions on these topics for new
+users, solving queries when a cryptic software error occurs or any other technical
 challenge in the process of implementing your machine or deep learning application.
 
 ## Making the transition
@@ -50,15 +50,15 @@ assume that you have or are willing to [request](https://portal.supercomputing.w
 
 As mentioned above, you will need to learn new concepts on [Linux](https://arcca.github.io/An-Introduction-to-Linux-with-Command-Line/), programming on [*Bash*](https://arcca.github.io/An-Introduction-to-Linux-Shell-Scripting/) and [general HPC terms](https://arcca.github.io/hpc-intro/) such as the use of job schedulers. And to put all 
 of them together to be able to write a *job script* that will execute the application
-that you developped in your local computer or cloud service of choice. We wont delve
+that you developed in your local computer or cloud service of choice. We won't delve
 into the specifics of these topics since you can follow the provided links to find
 dedicate training courses but instead summarize the essential steps to transfer our
 deep learning model develop in the previous lesson to Hawk.
 
 ## Transferring data
-First we need to be able to transfer our scripts and any data required. There are a 
+First, we need to be able to transfer our scripts and any data required. There are a 
 [few options](https://arcca.github.io/hpc-intro/16-transferring-files/index.html)
-to reach this goal but we will focus on using the terminal and *scp*:
+to reach this goal, but we will focus on using the terminal and *scp*
 ~~~
 $ scp my-script.py username@hawklogin.cf.ac.uk
 ~~~
@@ -75,7 +75,7 @@ $ ssh username@hawklogin.cf.ac.uk
 
 ## Installing software
 HPC systems like Hawk usually provide a rich software environment with many useful
-tools. However, it might be that we have an specific working environment that we 
+tools. However, it might be that we have a specific working environment that we 
 would like to replicate as is often the case when working with Anaconda and Python
 libraries. In this case it is useful to [create a virtual environment](https://arcca.github.io/slurm_advanced_topics/08-packages/index.html) 
 with all the dependencies that your application requires. On Hawk you can do this 
