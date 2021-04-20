@@ -138,10 +138,7 @@ network.add(layers.Dense(10,activation='softmax'))
 {: .language-python}
 
 Dense layers implements the operation:
-~~~
-output = activation(dot(input, kernel) + bias)
-~~~
-{: .language-python}
+>output = activation(dot(input, kernel) + bias)
 
 As mentioned above, *activation* is a element wise function, there are several types
 but for this example we use two of the most common ones: relu function, that 

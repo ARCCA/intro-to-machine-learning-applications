@@ -111,7 +111,7 @@ y = np.c_[country_stats_test["Life satisfaction"]]
 At this point it might be useful to visualize our data in order to gain some insight
 about the type of model that might be more useful to describe it:
 ~~~
-country_stats.plot(kind='scatter', x="GDP per capita (2020)", y='Life satisfaction',xlim=[0,60000],ylim=[0,10])
+country_stats_test.plot(kind='scatter', x="GDP per capita (2020)", y='Life satisfaction',xlim=[0,60000],ylim=[0,10])
 plt.show()
 ~~~
 {: .language-python}
@@ -155,7 +155,7 @@ It might be useful to plot our model along side our data:
 ~~~
 fig = plt.figure()
 ax1 = fig.add_subplot(111)
-ax1.scatter(country_stats["GDP per capita (2020)"],country_stats["Life satisfaction"])
+ax1.scatter(country_stats_test["GDP per capita (2020)"],country_stats_test["Life satisfaction"])
 ax1.set_xlim(0,60000)
 ax1.set_ylim(0,10)
 ax1.set_xlabel("GDP per capita (2020)")
