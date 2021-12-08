@@ -1,6 +1,6 @@
 ---
 title: "What is Machine Learning"
-teaching: 30
+teaching: 45
 exercises: 0
 questions:
 - "The basics."
@@ -23,11 +23,11 @@ both.
 <img src="{{ page.root }}/fig/ai-ml-dl-relations.svg" alt="AI, ML and DL relationship" width="25%" height="25%" />
 
 ### Artificial Intelligence
-Ada Lovelace is considered as the first computer programmer in history and while she 
+[Ada Lovelace](https://writings.stephenwolfram.com/2015/12/untangling-the-tale-of-ada-lovelace/) is considered as the first computer programmer in history and while she 
 was the first to recognise the enormous potential of the Analytical Engine and 
 universal computing, she also noted what she considered as an intrinsic limitation
 
-> *“The Analytical Engine has no pretensions whatever to originate anything. It cani
+> *“The Analytical Engine has no pretensions whatever to originate anything. It can
 >   do whatever we know how to order it to perform.... Its province is to assist us 
 >   in making available what we’re already acquainted with.”*
 
@@ -43,18 +43,13 @@ In this way, AI is a general field that encompasses Machine Learning and Deep
 Learning, but that also includes many more approaches that don’t involve any 
 learning. For a fairly long time, many experts believed that human-level AI could be
 achieved by having programmers handcraft a sufficiently large set of explicit rules 
-for manipulating knowledge. This approach is known as symbolic AI , and it was the 
+for manipulating knowledge. This approach is known as **symbolic AI** (it represents
+a problem using symbols and then uses logic to search for solutions), and it was the 
 dominant paradigm in AI from the 1950s to the late 1980s. It reached its peak 
 popularity during the expert systems boom of the 1980s. 
 <!--
 For several years a lack of computing power prevented researchers from making significant progress in the development of Artificial Intelligence. Only big universities and private companies could afford the expensive computers with the campabilities necessary to experiment in the field.
 -->
-
-Although symbolic AI proved suitable to solve well-defined, logical problems, such as
-playing chess, it turned out to be intractable to figure out explicit rules for 
-solving more complex, fuzzy problems, such as image classification, speech 
-recognition, and language translation. A new approach arose to take symbolic AI’s 
-place: Machine Learning.
 
 <!--
 https://www.forbes.com/sites/gilpress/2020/04/27/12-ai-milestones-4-mycin-an-expert-system-for-infectious-disease-therapy/?sh=57eb49f476e5
@@ -65,19 +60,50 @@ https://www.forbes.com/sites/gilpress/2020/04/27/12-ai-milestones-4-mycin-an-exp
 {::options parse_block_html="true" /}
 <div>
 <ul class="nav nav-tabs" role="tablist">
-  <li role="presentation" class="active"><a data-os="windows" href="#MYCIN" aria-controls="MYCIN" role="tab" data-toggle="tab">MYCIN</a></li>
-  <li role="presentation"><a data-os="macos" href="#Dendral" aria-controls="Dendral" role="tab" data-toggle="tab">Dendral</a></li>
+  <li role="presentation" class="active">
+   <a data-es-name="inco" 
+      href="#INCO" 
+      aria-controls="INCO" 
+      role="tab" data-toggle="tab">INCO</a>
+  </li>
+  <li role="presentation">
+   <a data-es-name="mycin"
+      href="#MYCIN"
+      aria-controls="MYCIN"
+      role="tab" 
+      data-toggle="tab">MYCIN</a>
+  </li>
+  <li role="presentation">
+   <a data-es-name="dendral" 
+      href="#Dendral" 
+      aria-controls="Dendral" 
+      role="tab" 
+      data-toggle="tab">Dendral</a>
+  </li>
 </ul>
 
 <div class="tab-content">
 
-<article role="tabpanel" class="tab-pane active" id="MYCIN">
+<article role="tabpanel" class="tab-pane active" id="INCO">
+The [**INCO**](https://ntrs.nasa.gov/citations/19960001823) (Integrated Communications
+ Officer) Expert System Project (IESP) was undertaken in 1987 by the Mission
+Operations Directorate (MOD) at NASA's Johnson Space Center (JSC) to explore the use 
+of advanced automation in the mission operations arena.
+<img src="{{ page.root }}/fig/stockvault-discovery-space-shuttle208103.jpg"
+     alt="Space Shuttle - INCO"
+     width="25%" />
+</article>
+
+<article role="tabpanel" class="tab-pane" id="MYCIN">
 [**MYCIN**](https://en.wikipedia.org/wiki/Mycin) was an early backward chaining 
 expert system that used artificial intelligence to identify bacteria causing severe 
 infections - MYCIN operated using a fairly simple inference engine and a knowledge 
 base of ~600 rules. -  MYCIN was developed over five or six years in the early 1970s
 at Stanford University. It was written in Lisp 
-<img src="{{ page.root }}/fig/MYCIN.jpg" alt="MYCIN" width="20%" height="20%" />
+<img src="{{ page.root }}/fig/MYCIN.jpg"
+     alt="MYCIN"
+     width="20%"
+     height="20%" />
 </article>
 
 <article role="tabpanel" class="tab-pane" id="Dendral">
@@ -86,7 +112,10 @@ project of the 1960s for the specific task of helping organic chemists in identi
 unknown organic molecules by analyzing their mass spectra and using knowledge of 
 chemistry. This software is considered the first expert system because it automated 
 the decision-making process and problem-solving behavior of organic chemists.
-<img src="{{ page.root }}/fig/Caffeine_structure.svg" alt="Caffeine Structure" width="20%" height="20%" />
+<img src="{{ page.root }}/fig/Caffeine_structure.svg"
+     alt="Caffeine Structure"
+     width="20%"
+     height="20%" />
 </article>
 
 </div>
@@ -108,10 +137,15 @@ Deep learning isn’t always the right tool for the job—sometimes there isn’
  - Modern neural networks
 -->
 
+Although symbolic AI proved suitable to solve well-defined, logical problems, such as
+playing chess, it turned out to be intractable to figure out explicit rules for 
+solving more complex, fuzzy problems, such as image classification, speech 
+recognition, and language translation. A new approach arose to take symbolic AI’s 
+place: Machine Learning.
 
 ## Machine Learning
-Machine learning arises from the question: could a computer go beyond “what we know 
-how to order it to perform” and learn on its own how to perform a specified task? 
+Machine learning arises from the question: could a computer go beyond *“what we know 
+how to order it to perform” and learn on its own how to perform a specified task?* 
 Could a computer surprise us? Rather than programmers crafting data-processing rules 
 by hand, could a computer automatically learn these rules by looking at data?
 
@@ -121,12 +155,16 @@ processed according to these rules, and out come answers. With Machine Learning,
 humans input data as well as the answers expected from the data, and out come the 
 rules. These rules can then be applied to new data to produce original answers.
 
-<img src="{{ page.root }}/fig/ml-programming-paradigm.svg" alt="AI, ML and DL relationship" width="40%" height="40%" />
+<img src="{{ page.root }}/fig/ml-programming-paradigm.svg"
+     alt="AI, ML and DL relationship"
+     width="40%"
+     height="40%" />
 
 Using data to predict something can be categorized as Machine Learning, a very simple
-example of this is to develop a linear regression model based on several mice weight
-and size measurements and use it predict the size of a new mouse based on its weight.
-In general, to do Machine Learning, we need three things:
+example of this is to develop a linear regression model based, for example, on several
+mice weight and size measurements and use it predict the size of a new mouse based on
+its weight. In general, to do Machine Learning, we need three things:
+
  - Input data points: for instance, if the task is speech recognition, these data 
    points could be sound files of people speaking. If the task is image tagging, they
    could be pictures. 
@@ -150,7 +188,8 @@ classification task.
 > Consider a number of points distributed in a xy-coordinate system. Some of them are
 >  white and some are black.
 >
-> <img src="{{ page.root }}/fig/example-1-raw-data.svg" alt="Example 1 - Raw Data" width="20%" height="20%" />
+> <img src="{{ page.root }}/fig/example-1-raw-data.svg" 
+>      alt="Example 1 - Raw Data" width="20%" height="20%" />
 >
 > And we are given the task to develop an algorithm to calculate the probability of 
 > the point being black or white given its x-y coordinates. In this case,
@@ -160,7 +199,7 @@ classification task.
 >
 > One way to solve the problem is by applying a coordinate change (a new 
 > representation of our data). This new representation would allow us to classify our
-> points with a more simple set of rules: "Black points are those such that x<0"
+> points with a more simple set of rules: "Black points are those such that x>0"
 >
 > In this case, we defined the coordinate change by hand. But if instead we tried 
 > systematically searching for different possible coordinate changes, and used as 
@@ -191,7 +230,7 @@ Or more formally:
 >  improves with experience E.*
 > —Tom Mitchell, 1997
 
-A machine-learning system is trained rather than explicitly programmed. It’s 
+A machine-learning system is trained rather than explicitly programmed. It is
 presented with many examples relevant to a task, and it finds statistical structure 
 in these examples that eventually allows the system to come up with rules for 
 automating the task.
@@ -213,7 +252,7 @@ Machine learning is tightly related to mathematical statistics, but it differs f
 There are many classes and subclasses of Machine Learning problems based on what the
 prediction task looks like. Some of the most common ones include:
  - **Classification** - We want to predict one of several options. The possible 
-   outcomes are called classes. The MIST problem is a 10 classes classification 
+   outcomes are called classes. The MNIST problem is a 10 classes classification 
    problem.
  - **Regression** - We want to predict a continuous value. For example, mice weight 
    given its size.
@@ -233,7 +272,8 @@ commonly described and classified in broad categories based on:
 - How much human supervision is required. There are four major categories:
   - **Supervised learning**: this method requires feeding the algorithm with "right"
     answers or solutions, also known as labels. Some of the most important supervised
-    learning algorithms: k-Nearest Neighbours, Linear Regression, Logistic Regression    , Support Vector Machines (SVMs), Decision Trees and Random Forests, Neural 
+    learning algorithms: k-Nearest Neighbours, Linear Regression, Logistic Regression,
+     Support Vector Machines (SVMs), Decision Trees and Random Forests, Neural 
     networks.
   - **Unsupervised learning**: in contrast, in this algorithm the system tries to 
     learn without a teacher, this is, with unlabelled data. Some of the most 
@@ -373,3 +413,13 @@ Some further reading to learn more about machine and deep learning.
 - Delip Rao & Brian McMahan (2019)  *Natural Language Processing with PyTorch Build 
   Intelligent Language Applications Using Deep Learning*. 1st ed. US: O'Reilly.
 - Ian Pointer (2019) *Programming PyTorch for Deep Learning*. 1st ed. US: O'Reilly.
+
+## Further training
+Some other sources with training material for DL and ML applications:
+
+- [TensorFlow - Learn Machine Learning](https://www.tensorflow.org/resources/learn-ml)
+- [Scikit Learn Tutorials](https://scikit-learn.org/stable/tutorial/index.html)
+- [Coursera - DeepLearning.AI TensorFlow Developer Professional Certificate](https://www.coursera.org/professional-certificates/tensorflow-in-practice)
+- [Coursera - Machine Learning](https://www.coursera.org/learn/machine-learning?)
+- [Udacity - Intro to TensorFlow for Deep Learning](https://www.udacity.com/course/intro-to-tensorflow-for-deep-learning--ud187)
+- [Google's Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course)

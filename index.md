@@ -8,16 +8,14 @@ more relevant on several research fields for which scientists rely on computatio
 frameworks such as Scikit Learn, TensorFlow, PyTorch etc. which are specially 
 designed to facilitate the development of Machine and Deep learning applications for
 research and commercial objectives. These frameworks provide a full set of libraries
-that allow researchers become productive within a relatively small amount of time 
+that allow researchers to become productive within a relatively small amount of time 
 and with a minimum knowledge of traditional MPI and GPU programming (ML and DL 
 frameworks are commonly already GPU-accelerated).
 
-This course will focus Machine Learning applications through the introduction of 
+This course will focus on Machine Learning applications through the introduction of 
 basic concepts and categories, the common workflow of application development through
 some simple examples, and some challenges and advantages of transitioning to HPC 
 systems.
-
-
 
 <!-- this is an html comment -->
 

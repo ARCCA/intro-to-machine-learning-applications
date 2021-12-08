@@ -20,7 +20,7 @@ library for machine learning. Scikit-learn comes with a few standard datasets, f
 instance the [iris](https://en.wikipedia.org/wiki/Iris_flower_data_set) and [digits](https://archive.ics.uci.edu/ml/datasets/Pen-Based+Recognition+of+Handwritten+Digits) 
 datasets for classification and the diabetes dataset for [regression](https://www4.stat.ncsu.edu/~boos/var.select/diabetes.html),
 you can find more information about these and other datasets in the context of 
-Scikit-learn usage [here](https://scikit-learn.org/stable/datasets/index.html#datasets).
+Scikit-learn usage [here](https://scikit-learn.org/stable/datasets/toy_dataset.html).
 
 ## The Iris Dataset
 The data set consists of 50 samples from each of three species of Iris (Iris setosa,

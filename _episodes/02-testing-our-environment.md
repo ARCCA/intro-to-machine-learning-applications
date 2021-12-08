@@ -1,6 +1,6 @@
 ---
 title: "Testing our environment"
-teaching: 30
+teaching: 45
 exercises: 0
 questions:
 - "Use Scikit Learn to build a simple linear regression machine learning problem."
@@ -116,13 +116,17 @@ plt.show()
 ~~~
 {: .language-python}
 
-<img src="{{ page.root }}/fig/life-satisfaction-vs-gdp.png" alt="GDP vs Life Satisfaction" width="50%" height="50%" />
+<img src="{{ page.root }}/fig/life-satisfaction-vs-gdp.png" 
+     alt="GDP vs Life Satisfaction" 
+     width="50%" 
+     height="50%" />
 
 There does seem to be a trend here! Although the data is noisy (i.e., partly random),
 it looks like life satisfaction goes up more or less linearly as the country’s GDP
 per capita increases. So you decide to model life satisfaction as a linear function
 of GDP per capita. This step is called *model selection*: you selected a 
-*linear model* of life satisfaction with just one attribute, GDP per capita:
+[*linear model*](https://scikit-learn.org/stable/modules/linear_model.html) of life 
+satisfaction with just one attribute, GDP per capita:
 ~~~
 model = sklearn.linear_model.LinearRegression()
 ~~~
