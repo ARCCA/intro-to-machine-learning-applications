@@ -132,7 +132,7 @@ print(iris_dataset['DESCR'])
 {: .language-python}
 
 ~~~
-.. _iris_dataset:
+.. iris_dataset:
 
 Iris plants dataset
 --------------------
@@ -197,13 +197,14 @@ latter are NOT linearly separable from each other.
    - Many, many more ...
 ~~~
 {: .output}
-
-> ## Test vs training sets
+<!--
 > Unfortunately, we cannot use the data we used to build the model to evaluate it. 
 > This is because our model can always simply remember the whole training set, and 
 > will therefore always predict the correct label for any point in the training set.
 > This “remembering” does not indicate to us whether our model will generalize well 
 > (in other words, whether it will also perform well on new data).
+-->
+> ## Test vs training sets
 >
 > To assess the model’s performance, we show it new data (data that it hasn’t seen 
 > before) for which we have labels. This is usually done by splitting the labeled 
@@ -222,11 +223,11 @@ latter are NOT linearly separable from each other.
 
 ## Training
 Scikit-learn's *train_test_split* function allow us to shuffle and split the dataset
-in a single line. The function takes a sequence of arrays (the arrys must be of the 
+in a single line. The function takes a sequence of arrays (the arrays must be of the 
 same length) and options to specify how to split the arrays. By default, the function
 extracts 75% of the rows in the arrays as the training set while the remaining 25% of
 rows is declared as the test set. Deciding how much data you want to put into the 
-training and the test set respectively is some‐ what arbitrary, but using a test set 
+training and the test set respectively is somewhat arbitrary, but using a test set 
 containing 25% of the data is a good rule of thumb. The function also allow us to 
 control the shuffling applied to the data before applying the split with the option 
 *random_state*, this ensures reproducible results.
