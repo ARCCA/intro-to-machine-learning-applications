@@ -423,3 +423,12 @@ Some other sources with training material for DL and ML applications:
 - [Coursera - Machine Learning](https://www.coursera.org/learn/machine-learning?)
 - [Udacity - Intro to TensorFlow for Deep Learning](https://www.udacity.com/course/intro-to-tensorflow-for-deep-learning--ud187)
 - [Google's Machine Learning Crash Course](https://developers.google.com/machine-learning/crash-course)
+
+- [Yann LeCun’s Deep Learning Course at CDS]( https://cds.nyu.edu/deep-learning/)
+- [MIT Courseware Linear Algebra](https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011/)
+- [CS224n: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/)
+- [CALTECH - Learning From Data - Machine Learning Course](https://home.work.caltech.edu/telecourse.html)
+- [UC Berkeley - Full Stack Deep Learning](https://fullstackdeeplearning.com/spring2021/)
+- [Stanford University - Introduction to Robotics](https://see.stanford.edu/Course/CS223A) 
+- [Linear Algebra Review](https://www.cs.cmu.edu/~zkolter/course/linalg/)
+- [Carnegie Melon University - Math Background for Machine Learning](https://canvas.cmu.edu/courses/603/assignments/syllabus)
