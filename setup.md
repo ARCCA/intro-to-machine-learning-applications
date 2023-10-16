@@ -5,7 +5,9 @@ title: Setup
 For this workshop you will need to:
 -  In general we will work with datasets that come preinstalled with python libraries
    but for lesson 2 we will use a couple of additional datasets. You can download 
-   them from this [<ins>link</ins>]({{ page.root }}/files/lesson02-gdp-bli.zip).
+   them from [<ins>here</ins>]({{ page.root }}/files/lesson02-gdp-bli.zip) and [<ins>here</ins>]({{ page.root }}/files/pretrained_models_and_transfer_learning.zip)
+
+
 -  Install Anaconda following the instructions for your platform in their official
    [documentation website](https://docs.anaconda.com/anaconda/install/).
 -  Once Anaconda is installed, be sure to have the following libraries:
@@ -23,6 +25,10 @@ For this workshop you will need to:
    Or if you prefer you can use [<ins>this yml file</ins>]({{ page.root }}/files/environment.yml) 
    to create a virtual environment with all the necessary libraries. You can use the
    following instructions to install the environment:
+
+
+
+## Install Anaconda
 
 {::options parse_block_html="true" /}
 <div>
@@ -136,5 +142,6 @@ For this workshop you will need to:
 
   </div>
 </div>
+
 
 {% include links.md %}
