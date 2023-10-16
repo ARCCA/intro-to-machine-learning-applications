@@ -100,7 +100,7 @@ expert system that used artificial intelligence to identify bacteria causing sev
 infections - MYCIN operated using a fairly simple inference engine and a knowledge 
 base of ~600 rules. -  MYCIN was developed over five or six years in the early 1970s
 at Stanford University. It was written in Lisp 
-<img src="{{ page.root }}/fig/MYCIN.jpg"
+<img src="{{ page.root }}/fig/MYCIN.JPG"
      alt="MYCIN"
      width="20%"
      height="20%" />
