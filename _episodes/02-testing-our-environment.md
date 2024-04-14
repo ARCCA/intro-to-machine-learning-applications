@@ -54,9 +54,11 @@ import sklearn.linear_model
 Continue by loading the data as Pandas dataframes. For this you need to provide the
 corresponding file locations, for example:
 ~~~
-root_path="ARC-An-Intro-to-Machine-Learning/gdp-bli/"
-oecd_life_sat = pd.read_csv(root_path+"BLI_25112020150937807.csv", thousands=',')
-imf_gdp_per_capita = pd.read_csv(root_path+"gdp_per_capita_2014-2025.csv",thousands=',',delimiter='\t',encoding='latin1', na_values="n/a")
+file_gdp="gdp-bli/gdp_per_capita_2014-2025.csv"
+file_happy="gdp-bli/BLI_25112020150937807.csv"
+
+df_gdp=pd.read_csv(file_gdp,thousands=',',delimiter='\t',encoding='latin1',na_values='n/a')
+df_happy=pd.read_csv(file_happy,thousands=',')
 ~~~
 {: .language-python}
 
@@ -64,7 +66,7 @@ You can take a look at the data we just loaded with the *head* dataframe functio
 for example, to print the first 5 rows in the GDP dataframe:
 ~~~
 rows=5
-imf_gdp_per_capita.head(rows)
+df_gdp.head(rows)
 ~~~
 {: .language-python}
 
@@ -77,23 +79,31 @@ dataframe. Some of the removed datapoints correspond to South Africa, Colombia,
 Iceland and Denmark. We can later use the data corresponding to these countries to 
 validate our Machine Learning Model.
 ~~~
-def prepare_country_stats(oecd_bli, imf_gdp):
-    oecd_bli = oecd_bli[oecd_bli["INEQUALITY"]=="TOT"]
-    oecd_bli = oecd_bli.pivot(index="Country", columns="Indicator",
-                              values="Value")
-    imf_gdp.rename(columns={"2020": "GDP per capita (2020)"},
-                   inplace=True)
-    imf_gdp.set_index("Country", inplace=True)
-    full_data = pd.merge(left=oecd_bli, right=imf_gdp,
-                         left_index=True, right_index=True)
-    full_data.sort_values(by="GDP per capita (2020)",
-                          inplace=True)
+def prepare_country_stats(data_happy,data_gdp):
+    # Process happiness data
+    # select rows matching TOT in columns INEQUALITY
+    data_happy = data_happy[data_happy["INEQUALITY"]=="TOT"]
+    # Create new df using 'Country' column as index and 'Indicator' as columns
+    # df is populated using values from column 'Values'
+    data_happy = data_happy.pivot(index="Country", columns="Indicator",values="Value")
+
+    # Process GDP data
+    # rename column and set a new index
+    data_gdp = data_gdp.rename(columns={"2021":"GDP per capita (2020)"})
+    data_gdp = data_gdp.set_index("Country")
+    
+    # Merge both datasets by country
+    merged_data = pd.merge(left=data_happy, right=data_gdp,left_index=True, right_index=True)
+    merged_data.sort_values(by="GDP per capita (2020)",inplace=True)
+    
+    # Create two sub datasets for testing and validation
+    # We select two specific columns out of the merged dataset
     remove_indices = [0, 1, 6, 8, 33, 34, 35, 36, 37, 38, 39]
-    keep_indices = list(set(range(full_data.shape[0])) - set(remove_indices))
-    test_data = full_data[["GDP per capita (2020)",
-                           'Life satisfaction']].iloc[keep_indices]
-    validate_data = full_data[["GDP per capita (2020)",
-                           'Life satisfaction']].iloc[remove_indices]
+    keep_indices = list(set(range(merged_data.shape[0])) - set(remove_indices))
+    
+    test_data     = merged_data[["GDP per capita (2020)",'Life satisfaction']].iloc[keep_indices]
+    validate_data = merged_data[["GDP per capita (2020)",'Life satisfaction']].iloc[remove_indices]
+    
     return test_data, validate_data
 ~~~
 {: .language-python}
@@ -101,8 +111,8 @@ def prepare_country_stats(oecd_bli, imf_gdp):
 Use the previously defined helper function and extract the data for "GDP per capita
 (2020)" and "Life satisfaction" as column vectors using Numpy.
 ~~~
-country_stats_test, country_stats_validate = prepare_country_stats(oecd_life_sat, imf_gdp_per_capita)
-X = np.c_[country_stats_test["GDP per capita (2020)"]]
+country_stats_test, country_stats_validate = prepare_country_stats(df_happy,df_gdp)
+x = np.c_[country_stats_test["GDP per capita (2020)"]]
 y = np.c_[country_stats_test["Life satisfaction"]]
 ~~~
 {: .language-python}
@@ -138,7 +148,7 @@ involves calculating a set of coefficients to minimize the residual sum of squar
 between the observed targets in the dataset, and the targets predicted by the linear 
 approximation.
 ~~~
-model.fit(X, y)
+model.fit(x, y)
 ~~~
 {: .language-python}
 
