@@ -144,7 +144,7 @@ recognition, and language translation. A new approach arose to take symbolic AI�
 place: Machine Learning.
 
 ## Machine Learning
-Machine learning arises from the question: could a computer go beyond *“what we know 
+Machine learning arises from the question: *could a computer go beyond “what we know 
 how to order it to perform” and learn on its own how to perform a specified task?* 
 Could a computer surprise us? Rather than programmers crafting data-processing rules 
 by hand, could a computer automatically learn these rules by looking at data?
@@ -269,7 +269,7 @@ prediction task looks like. Some of the most common ones include:
 Although there is no formal Machine Learning classification system yet, they are 
 commonly described and classified in broad categories based on:
 
-- How much human supervision is required. There are four major categories:
+- How much human supervision is required. There are three major categories:
   - **Supervised learning**: this method requires feeding the algorithm with "right"
     answers or solutions, also known as labels. Some of the most important supervised
     learning algorithms: k-Nearest Neighbours, Linear Regression, Logistic Regression,
